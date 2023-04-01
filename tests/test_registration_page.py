@@ -18,7 +18,7 @@ def test_registration_page():
     registration_page.type_number('1234567890')
     registration_page.type_date_of_birth('March', '2002', '27')
     registration_page.type_subjects('physics')
-    browser.element('[for="hobbies-checkbox-2"]').click()
+    registration_page.choose_hobbies('Reading')
     registration_page.picture_path('/picture/VYqbjvKLSlU.jpg')
     registration_page.type_address('address')
     registration_page.choose_state_and_city('Haryana', 'Karnal')

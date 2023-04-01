@@ -43,6 +43,10 @@ class RegistrationPage:
         browser.element('#subjectsInput').should(be.blank).type(value).press_enter()
         return self
 
+    def choose_hobbies(self, value):
+        browser.element('[for="hobbies-checkbox-2"]').should(have.text(value)).click()
+        return self
+
     def picture_path(self, file_name):
         return str(
             browser.element('#uploadPicture').send_keys(os.getcwd() + file_name)
@@ -58,8 +62,8 @@ class RegistrationPage:
         return self
 
     def should_registered_user_with(self, full_name, email, gender, number,
-                                    date_of_birth, subjects, hobbies, foto, address, state_and_city):
+                                    date_of_birth, subjects, hobbies, photo, address, state_and_city):
         browser.element('.table').all('td').even.should(
             have.exact_texts(full_name, email, gender, number,
-                             date_of_birth, subjects, hobbies, foto, address, state_and_city))
+                             date_of_birth, subjects, hobbies, photo, address, state_and_city))
         return self
