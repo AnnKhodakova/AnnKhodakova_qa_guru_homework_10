@@ -1,6 +1,6 @@
 from model.pages.registration_page import RegistrationPage
 from data.users import User
-
+import allure
 user = User('Bob', 'By',
             'email@email.email',
             'Male',
@@ -13,11 +13,15 @@ user = User('Bob', 'By',
             'Haryana', 'Karnal')
 
 
+@allure.title("Registration page")
 def test_registration_page():
-    registration_page = RegistrationPage()
-    registration_page.open()
-    registration_page.user_registration(user)
-    registration_page.should_registered_user_with('Bob By',
+        registration_page = RegistrationPage()
+        with allure.step("Open registrations form"):
+            registration_page.open()
+        with allure.step("Fill form"):
+            registration_page.user_registration(user)
+        with allure.step("Form results"):
+            registration_page.should_registered_user_with('Bob By',
                                                   'email@email.email',
                                                   'Male',
                                                   '1234567890',
