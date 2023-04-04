@@ -1,5 +1,5 @@
-import os
 
+from helpers import path
 from selene import be, have, command
 from data.users import User
 
@@ -51,10 +51,9 @@ class RegistrationPage:
         self.browser.element('[for="hobbies-checkbox-2"]').should(have.text(value)).click()
         return self
 
-    def picture_path(self, file_name):
-        return str(
-            self.browser.element('#uploadPicture').send_keys(os.getcwd() + file_name)
-        )
+    def upload_picture(self, file_name):
+        self.browser.element('#uploadPicture').set_value(path(file_name))
+        return self
 
     def type_address(self, value):
         self.browser.element('#currentAddress').should(be.blank).type(value)
@@ -85,7 +84,7 @@ class RegistrationPage:
         self.type_date_of_birth(user.month_of_birth, user.year_of_birth, user.day_of_birth)
         self.type_subjects(user.subjects)
         self.choose_hobbies(user.hobbies)
-        self.picture_path(user.picture)
+        self.upload_picture(user.picture)
         self.type_address(user.address)
         self.choose_state_and_city(user.state, user.city)
         self.click_submit()

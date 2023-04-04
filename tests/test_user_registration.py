@@ -9,7 +9,7 @@ user = User('Bob', 'By',
             'March', '2002', '27',
             'Physics',
             'Reading',
-            '/picture/VYqbjvKLSlU.jpg',
+            'VYqbjvKLSlU.jpg',
             'address',
             'Haryana', 'Karnal')
 
