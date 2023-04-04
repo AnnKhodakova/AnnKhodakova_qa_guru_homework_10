@@ -15,8 +15,8 @@ user = User('Bob', 'By',
 
 
 @allure.title("Registration page")
-def test_registration_page():
-    registration_page = RegistrationPage()
+def test_registration_page(setup_browser):
+    registration_page = RegistrationPage(setup_browser)
     with allure.step("Open registrations form"):
         registration_page.open()
     with allure.step("Fill form"):
@@ -26,11 +26,9 @@ def test_registration_page():
                                                       'email@email.email',
                                                       'Male',
                                                       '1234567890',
-                                                      '27 March,2002',
+                                                      '27 April,2023',
                                                       'Physics',
                                                       'Reading',
                                                       'VYqbjvKLSlU.jpg',
                                                       'address',
                                                       'Haryana Karnal')
-
-
