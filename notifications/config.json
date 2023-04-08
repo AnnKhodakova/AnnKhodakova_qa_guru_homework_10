@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "",
+    "project": "qa_guru_homework_12",
+    "environment": "",
+    "comment": "test",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "tests/allure-results/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6203689886:AAEz2PBREJ-pWQLXhiAJKR3bQzs08czMXsw",
+    "chat": "-1001913752133",
+    "replyTo": ""
+  }
+}
