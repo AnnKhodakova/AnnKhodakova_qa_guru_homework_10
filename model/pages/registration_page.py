@@ -1,4 +1,3 @@
-
 from helpers import path
 from selene import be, have, command
 from data.users import User
